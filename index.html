@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Whatsapp to a number</title>
+</head>
+
+<body style="margin:auto;width:50%">
+	<header>
+		<h1>Enter number to jump to the whatsapp</h1>
+	</header>
+
+	<input type="tel" name="phone" style="height:50px;font-size:14pt;margin-top:50px;margin:auto; width: 50%;" id="number">
+		<br>
+		<input type="submit" style="margin-left:20%; margin-top: 10px" onclick="addPrefix()">	
+<script type="text/javascript">
+	function addPrefix() {
+		ele = document.getElementById('number');
+		prefix = '+91' + ele.value;
+		document.getElementById('number').value = prefix;
+
+  const form = document.createElement('form');
+location.href = 'https://api.whatsapp.com/send?phone=' +  encodeURI(document.getElementById('number').value);
+	}
+</script>	
+</body>
+</html>
